@@ -1,24 +1,21 @@
 class Person:
-    def __init__(self, name, age):
+    def __init__(self, name):
         self.name = name
-        self.age = age
 
-    def display_person_info(self):
-        print("Name:", self.name)
-        print("Age:", self.age)
+    def getName(self):
+        return self.name
+
+    def isEmployee(self):
+        return False
 
 
 class Employee(Person):
-    def __init__(self, name, age, employee_id, salary):
-        super().__init__(name, age)
-        self.employee_id = employee_id
-        self.salary = salary
-
-    def display_employee_info(self):
-        self.display_person_info()
-        print("Employee ID:", self.employee_id)
-        print("Salary:", self.salary)
+    def isEmployee(self):
+        return True
 
 
-employee = Employee("Rahul", 22, 101, 50000)
-employee.display_employee_info()
+emp = Person("Geek1")
+print(emp.getName(), emp.isEmployee())
+
+emp = Employee("Geek2")
+print(emp.getName(), emp.isEmployee())
